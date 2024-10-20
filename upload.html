@@ -1,21 +1,20 @@
-<h1>Upload a Video</h1>
-<form id="video-upload-form">
-  <input type="file" id="video-file" name="video" accept="video/*">
-  <input type="text" id="video-title" name="title" placeholder="Video Title">
-  <input type="text" id="video-description" name="description" placeholder="Video Description">
-  <button type="submit">Upload Video</button>
-</form>
-<script>
-  const form = document.getElementById('video-upload-form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const videoFile = document.getElementById('video-file').files[0];
-    const videoTitle = document.getElementById('video-title').value;
-    const videoDescription = document.getElementById('video-description').value;
-    console.log('Simulated Video Upload:');
-    console.log(`File: ${videoFile.name}`);
-    console.log(`Title: ${videoTitle}`);
-    console.log(`Description: ${videoDescription}`);
-    alert('Video uploaded successfully (simulated)!');
-  });
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Upload Video</h1>
+    <form id="upload-form">
+        <input type="file" id="video-file" accept="video/*">
+        <input type="text" id="video-title" placeholder="Video Title">
+        <button type="submit">Upload Video</button>
+    </form>
+    <div id="upload-status"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
