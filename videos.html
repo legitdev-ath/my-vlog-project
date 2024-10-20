@@ -1,41 +1,18 @@
-<h1>Video Gallery</h1>
-<div class="video-gallery"></div>
-  <div id="video-list"></div>
-<script>
-// Simulated video uploads data
-const videoUploads = [];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Video Gallery</h1>
+    <div id="video-gallery"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
 
-// Function to generate the video list
-function generateVideoList() {
-  const videoListContainer = document.getElementById("video-list");
-  videoListContainer.innerHTML = ""; // Clear the container
-
-  // Fetch latest video uploads from storage location
-  fetch('/uploads') // Assuming uploads are stored in /uploads directory
-    .then(response => response.json())
-    .then(data => {
-      videoUploads = data; // Update videoUploads array
-      videoUploads.forEach((video) => {
-        const videoListItem = document.createElement("div");
-        videoListItem.innerHTML = `
-          <video width="320" height="240" controls>
-            <source src="${video.url}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h4>${video.title}</h4>
-        `;
-        videoListContainer.appendChild(videoListItem);
-      });
-    })
-    .catch(error => console.error('Error fetching video uploads:', error));
-}
-
-// Update video gallery in real-time
-setInterval(() => {
-  generateVideoList();
-}, 1000); // Update every 1 second
-
-</script>
 
   
 
