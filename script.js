@@ -21,4 +21,9 @@ fetch('uploads/') // TO DO: fetch uploaded videos
                 </video>
                 <h4>${video.title}</h4>
             `;
+                        videoGallery.appendChild(videoItem);
+        });
+    })
+    .catch(error => console.error('Error fetching video uploads:', error));
+
            
