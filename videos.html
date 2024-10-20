@@ -30,6 +30,11 @@ function generateVideoList() {
     .catch(error => console.error('Error fetching video uploads:', error));
 }
 
+// Update video gallery in real-time
+setInterval(() => {
+  generateVideoList();
+}, 1000); // Update every 1 second
+
 
 
 
