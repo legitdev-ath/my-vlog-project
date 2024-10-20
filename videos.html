@@ -2,3 +2,29 @@
 <div class="video-gallery">
   <!-- Video thumbnails will be displayed here -->
 </div>
+<div id="video-list"></div>
+<script>
+  // Simulated video uploads data
+  const videoUploads = [
+    { title: "Video 1", thumbnail: "https://via.placeholder.com/150" },
+    { title: "Video 2", thumbnail: "https://via.placeholder.com/150" },
+    { title: "Video 3", thumbnail: "https://via.placeholder.com/150" },
+  ];
+
+  // Function to generate the video list
+  function generateVideoList() {
+    const videoListContainer = document.getElementById("video-list");
+    videoUploads.forEach((video) => {
+      const videoListItem = document.createElement("div");
+      videoListItem.innerHTML = `
+        <img src="${video.thumbnail}" alt="${video.title}" width="150" height="100">
+        <h4>${video.title}</h4>
+      `;
+      videoListContainer.appendChild(videoListItem);
+    });
+  }
+
+  // Call the function to generate the video list
+  generateVideoList();
+</script>
+
