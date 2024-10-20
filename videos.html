@@ -24,7 +24,13 @@
 
   // Call the function to generate the video list
   generateVideoList();
+  // Update video gallery in real-time
+setInterval(() => {
+  generateVideoList();
+}, 1000); // Update every 1 second
+
 </script>
+
   
 
 
