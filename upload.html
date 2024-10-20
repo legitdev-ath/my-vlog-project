@@ -5,3 +5,17 @@
   <input type="text" id="video-description" name="description" placeholder="Video Description">
   <button type="submit">Upload Video</button>
 </form>
+<script>
+  const form = document.getElementById('video-upload-form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const videoFile = document.getElementById('video-file').files[0];
+    const videoTitle = document.getElementById('video-title').value;
+    const videoDescription = document.getElementById('video-description').value;
+    console.log('Simulated Video Upload:');
+    console.log(`File: ${videoFile.name}`);
+    console.log(`Title: ${videoTitle}`);
+    console.log(`Description: ${videoDescription}`);
+    alert('Video uploaded successfully (simulated)!');
+  });
+</script>
